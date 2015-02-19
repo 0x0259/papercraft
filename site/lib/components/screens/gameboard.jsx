@@ -92,7 +92,7 @@ var Gameboard = React.createClass({
 
     return (
       <App>
-        <h1>Gameboard</h1>
+        <div className='grid-background' />
         <div className='gameboard' id='gameboard' onMouseMove={self.setHoverTile} onMouseOut={self.clearHoverTile} onClick={self.setSelectedTile}>
           {self.renderBoard(8, 8)}
         </div>
