@@ -29,7 +29,7 @@ function byEnv(config) {
 
 module.exports = {
   env: env,
-  port: process.env.PORT || 8080,
+  port: process.env.PORT || 80,
   cluster: {
     instances: byEnv({
       development: 2,
