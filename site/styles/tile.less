@@ -1,0 +1,112 @@
+@default-tile-color: #eee;
+@default-tile-size: 100;
+
+@tile-color-blue: blue;
+@tile-color-green: green;
+@tile-color-grey: grey;
+@tile-color-hover: #000;
+@tile-color-selected: #ccc;
+
+.gameboard {
+  position: relative;
+  width: 100%;
+  height: 900px;
+}
+
+.gameboard__tile {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: unit(@default-tile-size / 2, px) solid transparent;
+  border-right: unit(@default-tile-size, px) solid @default-tile-color;
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: unit(@default-tile-size, px);
+    top: unit(@default-tile-size / -2, px);
+    width: 0;
+    height: 0;
+    border: unit(@default-tile-size / 2, px) solid transparent;
+    border-left: unit(@default-tile-size, px) solid @default-tile-color;
+  }
+
+  &--blue {
+    border-right-color: @tile-color-blue;
+
+    &:after {
+      border-left-color: @tile-color-blue;
+    }
+  }
+
+  &--green {
+    border-right-color: @tile-color-green;
+
+    &:after {
+      border-left-color: @tile-color-green;
+    }
+  }
+
+  &--grey {
+    border-right-color: @tile-color-grey;
+
+    &:after {
+      border-left-color: @tile-color-grey;
+    }
+  }
+
+  &--hover {
+    border-right-color: @tile-color-hover;
+
+    &:after {
+      border-left-color: @tile-color-hover;
+    }
+  }
+
+  &--selected {
+    border-right-color: @tile-color-selected;
+
+    &:after {
+      border-left-color: @tile-color-selected;
+    }
+  }
+}
+
+.gameboard__tile__shadow {
+  position: relative;
+  text-align: center;
+  padding: 12px;
+  margin-bottom: 6px;
+  height: 60px;
+  width: 200px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 25px;
+    left: 0;
+    height: 20%;
+    width: 51%;
+    background: #ddd;
+    -webkit-transform: skew(0deg, 26.5deg);
+    -moz-transform: skew(0deg, 26.5deg);
+    -ms-transform: skew(0deg, 26.5deg);
+    -o-transform: skew(0deg, 26.5deg);
+    transform: skew(0deg, 26.5deg);
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 25px;
+    right: 0;
+    height: 20%;
+    width: 50%;
+    background: #ddd;
+    -webkit-transform: skew(0deg, -26.5deg);
+    -moz-transform: skew(0deg, -26.5deg);
+    -ms-transform: skew(0deg, -26.5deg);
+    -o-transform: skew(0deg, -26.5deg);
+    transform: skew(0deg, -26.5deg);
+  }
+}
