@@ -29,8 +29,8 @@ var Login = React.createClass({
           <form className='login__form' onSubmit={this.submitSignin}>
             <input className='login__form__input' type='text' name='username' placeholder='Username' ref='emailField' />
             <input className='login__form__input' type='password' name='password' placeholder='Password' ref='passwordField' />
-            <button className='login__form__button login__form__button--submit'>Login to Papercraft</button>
-            <button type='submit' className='login__form__button login__form__button--register'>Register an Account</button>
+            <button className='login__form__button login__form__button--submit' type='submit'>Login to Papercraft</button>
+            <a className='login__form__button login__form__button--register'>Register an Account</a>
           </form>
           <div>
             {this.state.user ? this.state.user.alias : ''}
