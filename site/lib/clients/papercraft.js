@@ -44,9 +44,9 @@ PapercraftClient.prototype.signin = function signin(params) {
       }
 
       return {
-        alias: response.body.alias,
-        name: response.body.name,
-        email: response.body.email
+        alias: response.body.data.alias,
+        name: response.body.data.name,
+        email: response.body.data.email
       };
     });
 };

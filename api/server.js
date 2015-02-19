@@ -30,18 +30,30 @@ router.get('/', function(request, response) {
 
 router.post('/users/signin', jsonParser, function (request, response) {
   var params = request.body;
-  userDriver.signin(params.email, params.password, function (error, result) {
-    if (error) {
-      response.status(400).send(error);
-    }
-    else {
-      if (result !== null) {
-        response.status(200).send(result);
+  if (params.email === null || params.password === null || params.email === '' || params.password === '') {
+    response.status(400).send({
+      message: 'Must specify email or password'
+    });
+  }
+  else {
+    userDriver.signin(params.email, params.password, function (error, result) {
+      if (error) {
+        response.status(400).send({
+          message: error
+        });
       }
+      else {
+        if (result !== null) {
+          response.status(200).send({
+            message: 'success',
+            data: result
+          });
+        }
 
-      response.status(404).send();
-    }
-  });
+        response.status(404).send();
+      }
+    });
+  }
 });
 
 app.use('/v1', router);
