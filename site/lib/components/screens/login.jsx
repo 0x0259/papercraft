@@ -9,7 +9,7 @@ var Login = React.createClass({
   mappings: {
     user: 'auth:user'
   },
-  submitSignin: function () {
+  submitSignin: function (event) {
     event.preventDefault();
 
     var email = this.refs.emailField.getDOMNode().value.trim();
