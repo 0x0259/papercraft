@@ -26,7 +26,7 @@ var Login = React.createClass({
         <div className='grid-background' />
         <div className='login'>
           <Banner size='64' />
-          <form className='login__form' onSubmit={this.submitSignin}>
+          <form className='login__form' method='post' onSubmit={this.submitSignin}>
             <input className='login__form__input' type='text' name='username' placeholder='Username' ref='emailField' />
             <input className='login__form__input' type='password' name='password' placeholder='Password' ref='passwordField' />
             <button className='login__form__button login__form__button--submit' type='submit'>Login to Papercraft</button>
